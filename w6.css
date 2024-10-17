@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: lightgray;
+}
+
+header{
+    background-color: lightcoral;
+    color: rgb(12, 12, 58);
+    padding: 20px;
+}
+
+/* custom css class - custom classes start with a . */
+.btn{
+    background-color: white;
+    color: coral;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+/* add a hover effect for when the user hovers the mouse over the button */
+.btn:hover{
+    background-color: coral;
+    color: white;
+}
+
+/* build a box with a gradient (go from one color to another) */
+.gradient-box{
+    width: 200px;
+    height: 150px;
+    background: linear-gradient(to right, rgb(86, 12, 79), rgb(30, 79, 64));
+    border-radius: 10px;
+}
+/* create some animation using CSS */
+.animated-box{
+    width: 200px;
+    height: 200px;
+    background-color: coral;
+    border-radius: 50%; /* 50% on radius will give you a circle if you start with a square */
+    margin: 0 auto; /* this will usually work to center things */
+    animation: bounce 2s infinite; 
+}
+
+/* let's define what bounce means */
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100%{
+        transform: translateY(0); /* do not move at these % */
+    }
+    40%{
+        transform: translateY(-30px); /* move by 30 pixels at 40% */
+    }
+    60%{
+        transform: translateY(-15px); /* move by 15 pixels at 60% */
+    }
+}
+
+.features{
+    text-align: center;
+    max-width: 500px;
+    display: flex;
+    padding: 10px;
+}
+
+.feature{
+    padding: 5px;
+    max-width: 200px;
+}
+
+/* these CSS styles will overwrite any previous styles when the screen size is smaller than the max-width specified */
+@media (max-width: 600px){
+    .features{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature{
+        max-width: none;
+        width: 80%;
+    }
+}
