@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rae's Recipe Website</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        /* This is the only page that I want to have use this background image, so using an embedded style. */
+        body{
+            background-image: url('image2.jpg');
+            background-size: auto;
+            background-position: center;
+        } 
+    </style>
+</head>
+<body>
+    
+    <header class="content">
+        <nav>
+            <!-- Update the menu later
+                source: https://www.w3schools.com/css/css_navbar_horizontal.asp -->
+            <ul>
+                <li><a class="active" href="recipe_home.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="recipe_details.html">Recipe Details</a></li>
+              </ul>
+        </nav>
+
+        <h1>Welcome to Rae's Recipe Website</h1>
+    </header>
+
+    <main>
+        <div class="flex-container">
+            <div class="column">
+                <h2>Salad Recipe</h2>
+                <p>This is a yummy salad</p>
+                <img class="recipe" src="image1.jpg" alt="Salad on table with decorations.">
+            </div>
+
+            <div class="column">
+                <h2>Salad Recipe</h2>
+                <p>This is a yummy salad</p>
+                <img class="recipe" src="image2.jpg" alt="Cutting board with food.">
+            </div>
+
+            <div class="column">
+                <h2>Salad Recipe</h2>
+                <p>This is a yummy salad</p>
+                <!-- TODO: Update alt tag. -->
+                <img class="recipe" src="image3.jpg" alt="Food.">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(13, 13, 43);
+}
+
+/*
+    This builds a semi transparent box. Used on the index page for the header section.
+*/
+.content{
+    background-color: rgba(70, 19, 19, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    text-align: center;    
+    border-radius: 10px;
+}
+
+/*  
+    Setting the H1 color to whitesmoke specifically for the index page on the content semi transparent box.
+    TODO: make sure having a light H1 color will not be an issue on the other pages */
+h1{
+    color: whitesmoke;
+}
+
+/* Make the recipe images all have consistent widths */
+img.recipe{
+    width: 400px;
+    height: 500px;
+}
+
+
+/* These are the styles for responsive column layout */
+
+.flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.column{
+    /* sets the flex grow factor of the "column" elements to 1. This means that they will grow to fill any available space along the main axis of the flex container, distributing the space evenly among all flex items with the same flex-grow value.*/
+    flex: 1;
+    background-color: rgb(177, 168, 160);
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, .1);
+    text-align: center;
+}
+
+.column + .column{
+    margin-left: 20px;
+}
+
+@media (max-width: 768px){
+    .flex-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column + .column{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Menu from w3schools: https://www.w3schools.com/css/css_navbar_horizontal.asp
+    TODO: possibly re-style to better fit theme 
+    */
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        /*background-color: #333;*/
+      }
+      
+      li {
+        float: left;
+      }
+      
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      
+      li a:hover {
+        background-color: #111;
+      }
