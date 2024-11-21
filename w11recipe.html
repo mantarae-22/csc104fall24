@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rae's Recipe Website</title>
+    <!-- Embedded CSS 
+        TODO: move to external CSS when finished -->
+    <style>
+        body{
+            background-image: url('./images/bg.jpg');
+            background-size: auto;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(36, 7, 7);
+        }
+
+        /* these styles will only apply to images with the recipe class; this will not affect other images on the page */
+        img.recipe{
+            width: 400px;
+            height: 500px;
+        }
+
+        header{
+            /* rgba let's us set the transparency/opaqueness of the background - the value is between 0 and 1 */
+            background-color: rgba(36, 7, 7, .8);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            text-align: center;
+            color: whitesmoke;
+        }
+
+        /* this is our custom class that will create the flex layout - this is the parent container */
+        .flex-container{
+            display: flex;
+            justify-content: space-between; /* the browser will distribute items evenly */
+            align-items: flex-start; /* vertically align the items */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* these are the column styles */
+        .column{
+            flex: 1;  /* this allows our columns to fill in the available space */
+            background-color: rgba(201, 160, 119, 0.8);
+            padding: 20px;
+            border: 1px solid rgb(36, 7, 7);
+            box-shadow: 0px 2px 4px rgb(36, 7, 7);
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* if you have 2 elements next to each other with these class names, then this style will apply */
+        .column + .column{
+            margin-left: 20px;
+        }
+
+        /* set up a media query so the columns stack on a smaller screen */
+        @media (max-width: 768px){
+            .flex-container{
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .column + .column{
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+
+        /* set up the menu styles */
+        ul{
+            list-style-type: none;
+            overflow: hidden; /* no scroll bar */
+        }
+
+        li{
+            float: left;
+        }
+
+        li a{
+            display: block;
+            color: whitesmoke;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        li a:hover{
+            background-color:rgb(36, 7, 7);
+        }
+    </style>
+</head>
+<body>
+    <!-- header will have info that should show up at the top of the page; logo, links, page title -->
+    <header>
+        <!-- add a nav section to hold the menu -->
+         <nav>
+            <!-- this menu uses an unordered list - ul, with the links each being in a listitem - li -->
+             <!-- TODO: add in the links to the other pages -->
+             <ul>
+                <li><a href="w11recipe.html">Recipe Home</a></li>
+                <li><a href="">Recipes</a></li>
+                <li><a href="">Recipe Details</a></li>
+             </ul>
+         </nav>
+
+         <!-- page title -->
+          <h1>Welcome to Rae's Recipe Website</h1>
+    </header>
+
+    <!-- the top 3 recipes will go here -->
+    <main>
+        <section class="flex-container">
+            <!-- Recipe 1 -->
+            <article class="column">
+                <!-- h2 - second level heading -->
+                <h2>Salad Recipe</h2>
+                <!-- p - paragraph has some details -->
+                <p>This is a yummy salad.</p>
+                <!-- TODO: make a more descriptive alt tag -->
+                <img src="./images/image1.jpg" alt="Salad" class="recipe">
+            </article>
+
+             <!-- Recipe 2 -->
+             <article class="column">
+                <!-- h2 - second level heading -->
+                <h2>Another Salad Recipe</h2>
+                <!-- p - paragraph has some details -->
+                <p>This is another yummy salad.</p>
+                <!-- TODO: make a more descriptive alt tag -->
+                <img src="./images/image2.jpg" alt="Cutting board" class="recipe">
+            </article>
+
+             <!-- Recipe 3 -->
+             <article class="column">
+                <!-- h2 - second level heading -->
+                <h2>Salad Recipe</h2>
+                <!-- p - paragraph has some details -->
+                <p>This is yet another yummy salad.</p>
+                <!-- TODO: make a more descriptive alt tag -->
+                <img src="./images/image3.jpg" alt="Salad" class="recipe">
+            </article>
+        </section>
+    </main>
+
+</body>
+</html>
